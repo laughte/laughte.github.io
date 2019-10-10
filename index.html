@@ -20,7 +20,20 @@
       <p>Try Element</p>
     </el-dialog>
     <el-button @click="getRequest">getRequest</el-button>
-    <div></div>
+    <el-container>
+      <el-header>Header</el-header>
+      <el-aside width="200px">Aside</el-aside>
+      <el-main>
+        <el-card v-for="(e,i) in resdata">
+          <img :src="e.album.artist.img1v1Url" alt="">
+          <div class="bottom clearfix">
+            <span class="span">{{ e.name }}</time>
+              <span>{{e.album.name}}</span>
+          </div>
+        </el-card>
+      </el-main>
+    </el-container>
+
   </div>
 
 
@@ -45,7 +58,8 @@
     methods: {
       getRequest() {
         axios.get('http://39.105.168.171:3000/search?keywords= 此生不换').then(res => {
-          console.log(res)
+          // console.log(res)
+          this.resdata = res.data.result.songs
         })
       }
     }
