@@ -24,13 +24,19 @@
       <el-header>Header</el-header>
       <el-aside width="200px">Aside</el-aside>
       <el-main>
-        <el-card v-for="(e,i) in resdata">
-          <img :src="e.album.artist.img1v1Url" alt="">
-          <div class="bottom clearfix">
-            <span class="span">{{ e.name }}</time>
-              <span>{{e.album.name}}</span>
-          </div>
-        </el-card>
+        <el-container>
+          <el-row :gutter="20">
+            <el-col :span="4" v-for="(e,i) in resdata">
+              <el-card>
+                <img :src="e.album.artist.img1v1Url" alt="">
+                <div class="bottom clearfix">
+                  <span class="span">{{ e.name }}</time>
+                    <span>{{e.album.name}}</span>
+                </div>
+              </el-card>
+            </el-col>
+          </el-row>
+        </el-container>
       </el-main>
     </el-container>
 
