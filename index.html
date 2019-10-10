@@ -18,6 +18,8 @@
     <el-dialog :visible.sync="visible" title="Hello world">
       <p>Try Element</p>
     </el-dialog>
+    <el-button @click="getRequest">getRequest</el-button>
+    <div></div>
   </div>
 
 
@@ -35,7 +37,15 @@
     el: '#app',
     data: function () {
       return {
-        visible: false
+        visible: false,
+        resdata: []
+      }
+    },
+    methods: {
+      getRequest() {
+        axios.get('http://39.105.168.171:3000/search?keywords= 此生不换').then(res => {
+          console.lo(res)
+        })
       }
     }
   })
