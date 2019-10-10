@@ -21,22 +21,23 @@
     </el-dialog>
     <el-button @click="getRequest">getRequest</el-button>
     <el-container>
-      <el-header>Header</el-header>
+
       <el-aside width="200px">Aside</el-aside>
+      <el-header>Header</el-header>
       <el-main>
-        <el-container>
-          <el-row :gutter="20">
-            <el-col :span="4" v-for="(e,i) in resdata">
-              <el-card>
-                <img :src="e.album.artist.img1v1Url" alt="">
-                <div class="bottom clearfix">
-                  <span class="span">{{ e.name }}</time>
-                    <span>{{e.album.name}}</span>
-                </div>
-              </el-card>
-            </el-col>
-          </el-row>
-        </el-container>
+
+        <el-row :gutter="20">
+          <el-col :span="4" v-for="(e,i) in resdata">
+            <el-card>
+              <img height="135px" width="auto" :src="e.album.artist.img1v1Url" alt="">
+              <div class="bottom clearfix">
+                <span class="span">{{ e.name }}</time>
+                  <span>{{e.album.name}}</span>
+              </div>
+            </el-card>
+          </el-col>
+        </el-row>
+
       </el-main>
     </el-container>
 
