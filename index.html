@@ -33,7 +33,7 @@
 <!-- import JavaScript -->
 <script src="https://unpkg.com/element-ui/lib/index.js"></script>
 <script>
-  const axios = require('axios').default;
+  import axios from "axios";
   new Vue({
     el: '#app',
     data: function () {
@@ -45,7 +45,7 @@
     methods: {
       getRequest() {
         axios.get('http://39.105.168.171:3000/search?keywords= 此生不换').then(res => {
-          console.lo(res)
+          console.log(res)
         })
       }
     }
